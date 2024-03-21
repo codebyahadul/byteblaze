@@ -6,10 +6,12 @@ const Mainlayout = () => {
     return (
         <div>
             <div className="h-16">
-                <Nav/>
+                <Nav />
             </div>
-            <Outlet/>
-            <Footer/>
+            <div className="min-h-[calc(100vh-116px)]">
+                <Outlet />
+            </div>
+            <Footer />
         </div>
     );
 };
