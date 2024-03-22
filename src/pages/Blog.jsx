@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import { useState } from "react";
-import { Link, Outlet, useLoaderData } from "react-router-dom";
+import { Link, Outlet, useLoaderData, useNavigation } from "react-router-dom";
 
 const Blog = () => {
     // eslint-disable-next-line no-unused-vars
@@ -8,6 +8,7 @@ const Blog = () => {
     const blog = useLoaderData();
     console.log(blog);
     const { title, tags, public_reactions_count, reading_time_minutes, comments_count, published_at } = blog;
+    
     return (
         <div className="max-w-3xl px-6 py-16 mx-auto space-y-12">
             <article className="space-y-8 dark:bg-gray-800 dark:text-gray-50">
