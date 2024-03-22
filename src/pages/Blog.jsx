@@ -1,14 +1,19 @@
 /* eslint-disable no-unused-vars */
 import { useState } from "react";
 import { Link, Outlet, useLoaderData, useNavigation } from "react-router-dom";
-
+import { BsFillBookmarkStarFill } from "react-icons/bs";
+import { saveBlogs } from "../utils";
 const Blog = () => {
     // eslint-disable-next-line no-unused-vars
     const [tabIndex, setTabIndex] = useState(0);
     const blog = useLoaderData();
     console.log(blog);
     const { title, tags, public_reactions_count, reading_time_minutes, comments_count, published_at } = blog;
-    
+    const handleBookmark = blog => {
+        console.log(blog);
+        saveBlogs(blog);
+
+    }
     return (
         <div className="max-w-3xl px-6 py-16 mx-auto space-y-12">
             <article className="space-y-8 dark:bg-gray-800 dark:text-gray-50">
@@ -39,6 +44,10 @@ const Blog = () => {
                             </svg>
                             <span>Author</span>
                         </Link>
+                        {/* book mark button */}
+                        <div onClick={()=> handleBookmark(blog)} className="bg-primary p-3 ml-5 rounded-full hover:bg-opacity-30 bg-opacity-10 cursor-pointer hover:scale-105">
+                            <BsFillBookmarkStarFill size={25} className ="text-secondary"></BsFillBookmarkStarFill>                        
+                        </div>
                     </div>
                 </div>
                 <Outlet/>
