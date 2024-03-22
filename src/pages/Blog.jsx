@@ -7,12 +7,9 @@ const Blog = () => {
     // eslint-disable-next-line no-unused-vars
     const [tabIndex, setTabIndex] = useState(0);
     const blog = useLoaderData();
-    console.log(blog);
-    const { title, tags, public_reactions_count, reading_time_minutes, comments_count, published_at } = blog;
+    const { title, public_reactions_count, reading_time_minutes, comments_count, published_at } = blog;
     const handleBookmark = blog => {
-        console.log(blog);
         saveBlogs(blog);
-
     }
     return (
         <div className="max-w-3xl px-6 py-16 mx-auto space-y-12">

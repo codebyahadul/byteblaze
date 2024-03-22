@@ -1,10 +1,8 @@
-/* eslint-disable react/prop-types */
+import PropTypes from 'prop-types';
 import placeholderimage from '../assets/404.jpg'
 import { Link } from "react-router-dom";
 import { MdDelete } from "react-icons/md";
 const BlogCard = ({ blog, deletable, handleDelete }) => {
-    // console.log(blog);
-
     return (
         <div className='flex relative'>
             <Link to={`/blog/${blog.id}`} className="max-w-sm mx-auto group hover:no-underline focus:no-underline dark:bg-gray-900 p-2 border-2 border-primary hover:border-secondary  transition hover:scale-105">
@@ -21,5 +19,10 @@ const BlogCard = ({ blog, deletable, handleDelete }) => {
         </div>
     );
 };
+BlogCard.propTypes = {
+    blog: PropTypes.object.isRequired,
+    deletable: PropTypes.bool.isRequired,
+    handleDelete: PropTypes.func.isRequired
+}
 
 export default BlogCard;

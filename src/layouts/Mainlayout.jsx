@@ -15,5 +15,4 @@ const Mainlayout = () => {
         </div>
     );
 };
-
 export default Mainlayout;

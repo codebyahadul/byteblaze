@@ -1,8 +1,6 @@
-/* eslint-disable react/prop-types */
-
+import PropTypes from 'prop-types';
 import { Link } from "react-router-dom";
 
-// eslint-disable-next-line no-unused-vars
 const EmptyState = ({ message, address, label }) => {
     return (
         <div className='min-h-[calc(100vh-116px)] gap-5 flex flex-col justify-center items-center pb-16 '>
@@ -20,5 +18,9 @@ const EmptyState = ({ message, address, label }) => {
         </div>
     );
 };
-
+EmptyState.propTypes = {
+    message: PropTypes.string.isRequired,
+    address: PropTypes.string.isRequired,
+    label: PropTypes.string.isRequired
+}
 export default EmptyState;
