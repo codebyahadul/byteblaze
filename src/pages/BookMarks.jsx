@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { deleteBlogs, getBlogs } from "../utils";
 import BlogCard from "../components/BlogCard";
 import { Link } from "react-router-dom";
+import EmptyState from "../components/EmptyState";
 
 const BookMarks = () => {
     const [blogs, setBlogs] = useState([]);
@@ -14,6 +15,7 @@ const BookMarks = () => {
         const savedBlogs = getBlogs();
         setBlogs(savedBlogs);
     }
+    if(blogs.length < 1) return <EmptyState message="No Bookmarks Available" address={'/blogs'} label='Go to Blogs'/>
     return (
         <Link to='/bookmarks' className="grid justify-center grid-cols-1 gap-5  px-4 sm:px-8 lg:px-12 py-8 sm:grid-cols-2 lg:grid-cols-3">
             {
