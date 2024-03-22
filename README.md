@@ -2,7 +2,7 @@
 
 Live site:
 
-- [ByteBlaze](https://byte-blaze.netlify.app/)
+- [ByteBlaze](https://bytbleze.netlify.app/)
 
 Resources:
 
