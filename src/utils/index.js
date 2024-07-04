@@ -7,9 +7,7 @@ export const getBlogs = () =>{
     }
     return blogs;
 }
-
 // save blogs 
-
 export const saveBlogs = blog => {
     let blogs = getBlogs();
     const isExit = blogs.find(b => b.id === blog.id);
@@ -22,9 +20,7 @@ export const saveBlogs = blog => {
         toast.success('Bookmarked Successfully !')
     }
 };
-
 // delete blogs
-
 export const deleteBlogs = id => {
     let blogs = getBlogs();
     const remaining = blogs.filter(b => b.id != id);
